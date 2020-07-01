@@ -45,7 +45,7 @@ def Emonitor_connect(sw_list,loop_keys, log):
     else:
         try:
             # send the command to see the log
-            output_text_more = switch_connect.send_command(log_command, expect_string='--More--', delay_factor=1.5)
+            output_text_more = switch_connect.send_command(log_command, expect_string='', delay_factor=1.5)
         except Exception as e:
             log.logger.debug('不支持分屏输出，正在等待交换机将数据逐步传入，请耐心等待')
             output_text_more = switch_connect.send_command(log_command, expect_string='#', delay_factor=20)
